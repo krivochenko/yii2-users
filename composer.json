@@ -2,7 +2,7 @@
     "name": "budyaga/yii2-users",
     "description": "Module for manage users and their rights with the support of registration through social services and assigned to each user more than one social service.",
     "type": "yii2-extension",
-    "keywords": ["yii2","extension","users","oauth","rbac"],
+    "keywords": ["yii2","extension","users","module","oauth","rbac"],
     "license": "BSD-3-Clause",
     "authors": [
         {
