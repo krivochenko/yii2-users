@@ -12,7 +12,8 @@
     ],
     "require": {
         "yiisoft/yii2": "*",
-		"yiisoft/yii2-authclient": "*"
+		"yiisoft/yii2-authclient": "*",
+        "budyaga/yii2-cropper": "*"
     },
     "autoload": {
         "psr-4": {
