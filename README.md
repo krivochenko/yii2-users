@@ -164,9 +164,13 @@ use budyaga\users\components\AuthorizationWidget;
 ```
 
 **Signup**: http://example.com/signup
+
 **Profile**: http://example.com/profile
+
 **Restore password**: http://example.com/requestPasswordReset
+
 **Manage users**: http://example.com/user/admin
+
 **Manage RBAC**: http://example.com/user/rbac
 
 Custom views and email templates
