@@ -3,6 +3,7 @@
 use yii\bootstrap\ActiveForm;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
+use budyaga\users\components\PermissionsTreeWidget;
 
 $this->title = Yii::t('users', 'CHILDREN_FOR', ['modelName' => $modelForm->model->name]);
 $this->params['breadcrumbs'][] = ['label' => 'RBAC', 'url' => ['/user/rbac/index']];
@@ -11,8 +12,8 @@ $this->params['breadcrumbs'][] = $this->title;
 ?>
 <h1><?= Html::encode($this->title) ?></h1>
 
-<?php $form = ActiveForm::begin(); ?>
 <div class="row">
+    <?php $form = ActiveForm::begin(); ?>
     <div class="col-xs-5">
         <?= $form->field($modelForm, 'assigned')->dropDownList(
             ArrayHelper::map(
@@ -38,5 +39,11 @@ $this->params['breadcrumbs'][] = $this->title;
             ), ['multiple' => 'multiple', 'size' => '20', 'class' => 'col-xs-12'])
         ?>
     </div>
+    <?php ActiveForm::end(); ?>
 </div>
-<?php ActiveForm::end(); ?>
+<h3><?= Yii::t('users', 'CHILDREN')?></h3>
+<div class="row">
+    <div class="col-xs-12">
+        <?= PermissionsTreeWidget::widget(['item' => $modelForm->model])?>
+    </div>
+</div>

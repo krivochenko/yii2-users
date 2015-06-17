@@ -5,7 +5,7 @@
             <?php
             $children = Yii::$app->authManager->getChildren($child->name);
             if (count($children)) {
-                echo $this->context->render('_userPermissionsLevel', ['children' => $children]);
+                echo $this->context->render('_branch', ['children' => $children]);
             }
             ?>
         </div>

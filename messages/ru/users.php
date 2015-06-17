@@ -25,7 +25,7 @@ return [
     'CHANGE_PASSWORD' => 'Сменить пароль',
     'CHANGES_WERE_SAVED' => 'Изменения были успешно сохранены',
     'CHECK_YOUR_EMAIL_FOR_FURTHER_INSTRUCTION' => 'Проверьте свой e-mail для получения дальнейших инструкций',
-    'CHILDREN' => 'Связка',
+    'CHILDREN' => 'Связки',
     'CHILDREN_FOR' => 'Связки для "{modelName}"',
     'CHOOSE_ITEMS' => 'Выберите элементы',
     'CLASS_DO_NOT_EXISTS' => 'Класс "{phpClass}" не существует',

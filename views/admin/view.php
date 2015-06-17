@@ -5,6 +5,7 @@ use yii\widgets\DetailView;
 use budyaga\users\UsersAsset;
 use budyaga\users\models\User;
 use budyaga\users\components\UserPermissionsWidget;
+use budyaga\users\components\PermissionsTreeWidget;
 
 /* @var $this yii\web\View */
 /* @var $model budyaga\users\models\User */
@@ -53,6 +54,6 @@ $assets = UsersAsset::register($this);
         <?= Yii::$app->user->can('userPermissions', ['user' => $model]) ? Html::a(Yii::t('yii', 'Update'), ['permissions', 'id' => $model->id], ['class' => 'btn btn-primary']) : '' ?>
     </p>
 
-    <?= UserPermissionsWidget::widget(['user' => $model])?>
+    <?= PermissionsTreeWidget::widget(['user' => $model])?>
 
 </div>
