@@ -43,6 +43,7 @@ return [
     'ERROR_UPDATE' => 'An error occurred while updating an element "{name}" of type "{type}"',
     'ERROR_ITEMS_BINDING' => 'Binding elements completed with errors',
     'ERROR_ITEMS_UNBINDING' => 'Unbinding elements completed with errors',
+    'FILTER_PLACEHOLDER' => 'Filter by name or description',
     'KEYS' => 'Keys',
     'LOGIN' => 'Login',
     'MIGRATION_ADMINISTRATOR' => 'Administrator',

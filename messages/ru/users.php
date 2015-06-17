@@ -43,6 +43,7 @@ return [
     'ERROR_UPDATE' => 'При изменении элемента "{name}" с типом "{type}" произошла ошибка',
 	'ERROR_ITEMS_BINDING' => 'Привязка элементов завершилась с ошибками',
     'ERROR_ITEMS_UNBINDING' => 'Отвязка элементов завершилась с ошибками',
+    'FILTER_PLACEHOLDER' => 'Фильтр по названию или описанию',
     'KEYS' => 'Ключи',
     'LOGIN' => 'Вход',
 	'MIGRATION_ADMINISTRATOR' => 'Администратор',
