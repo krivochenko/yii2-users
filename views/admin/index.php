@@ -39,11 +39,21 @@ $this->params['breadcrumbs'][] = $this->title;
             ],
              'created_at:datetime',
              'updated_at:datetime',
-
             [
                 'class' => 'yii\grid\ActionColumn',
                 'template' => '{view} {update} {delete} {permissions}',
                 'buttons' => [
+                    'view' => function ($url, $model, $key) {
+                        if (!Yii::$app->user->can('userView', ['user' => $model])) {
+                            return '';
+                        }
+                        $options = [
+                            'title' => Yii::t('yii', 'View'),
+                            'aria-label' => Yii::t('yii', 'View'),
+                            'data-pjax' => '0',
+                        ];
+                        return Html::a('<span class="glyphicon glyphicon-eye-open"></span>', $url, $options);
+                    },
                     'update' => function ($url, $model, $key) {
                         if (!Yii::$app->user->can('userUpdate', ['user' => $model])) {
                             return '';
