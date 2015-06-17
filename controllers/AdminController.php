@@ -16,7 +16,7 @@ use yii\filters\AccessControl;
  */
 class AdminController extends Controller
 {
-    private $_model;
+    private $_model = false;
 
     public function behaviors()
     {
@@ -50,7 +50,7 @@ class AdminController extends Controller
                         'allow' => true,
                         'actions' => ['update'],
                         'matchCallback' => function ($rule, $action) {
-                            return Yii::$app->user->can('userUpdate', ['user' => $this->getModel()]);
+                            return Yii::$app->user->can('userUpdate', ['user' => $this->findModel(Yii::$app->request->get('id'))]);
                         }
                     ],
                     [
@@ -169,22 +169,14 @@ class AdminController extends Controller
      */
     protected function findModel($id)
     {
-        if (($model = User::findOne($id)) !== null) {
-            return $model;
-        } else {
-            throw new NotFoundHttpException('The requested page does not exist.');
-        }
-    }
-
-    protected function getModel()
-    {
-        if ($this->action->id != 'update') {
-            return;
-        }
-        if (!$this->_model) {
-            $this->_model = self::findModel(Yii::$app->request->get('id'));
+        if ($this->_model === false) {
+            $this->_model = User::findOne($id);
         }
 
-        return $this->_model;
+        if ($this->_model !== null) {
+            return $this->_model;
+        }
+
+        throw new NotFoundHttpException('The requested page does not exist.');
     }
 }
