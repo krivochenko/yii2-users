@@ -14,12 +14,9 @@ class UsersAsset extends AssetBundle
 	 */
 	public $sourcePath = '@budyaga/users/assets';
 
-	/**
-	 * @inheritdoc
-	 */
-	public $css = [
-		'css/styles.css'
-	];
+    public $js = [
+        'js/users.js'
+    ];
 
 	/**
 	 * @inheritdoc

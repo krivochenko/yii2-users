@@ -3,10 +3,8 @@
 use yii\helpers\Url;
 use yii\helpers\Html;
 use yii\bootstrap\ActiveForm;
-use budyaga\users\UsersAsset;
 use budyaga\users\components\AuthChoice;
 
-UsersAsset::register($this);
 ?>
 <div class="panel panel-default">
     <div class="panel-heading"><?= Yii::t('users', 'AUTHORISATION')?></div>

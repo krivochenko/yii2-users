@@ -144,7 +144,7 @@ class AuthChoice extends \yii\authclient\widgets\AuthChoice
                     $htmlOptions['data-popup-height'] = $viewOptions['popupHeight'];
                 }
             }
-            echo Html::a($text, $this->createClientUrl($client), $htmlOptions);
+            echo Html::a($text, $this->createClientUrl($client), $htmlOptions).'<br>';
         } else {
             $widgetConfig = $viewOptions['widget'];
             if (!isset($widgetConfig['class'])) {
