@@ -20,7 +20,7 @@ use budyaga\users\components\AuthChoice;
         <?php $form = ActiveForm::begin(['id' => 'login-widget-form', 'action' => Url::toRoute('/login')]); ?>
             <div class="row">
                 <div class="col-xs-6 col-sm-12">
-                    <?= $form->field($model, 'email')->input('email') ?>
+                    <?= $form->field($model, 'email') ?>
                 </div>
                 <div class="col-xs-6 col-sm-12">
                     <?= $form->field($model, 'password')->passwordInput() ?>

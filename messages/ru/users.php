@@ -36,6 +36,7 @@ return [
 	'CREATED_AT' => 'Создан',
     'EMAIL' => 'Электронная почта',
     'EMAIL_CONFIRMATION' => 'Подтверждение e-mail',
+    'EMAIL_OR_USERNAME' => 'E-mail или имя пользователя',
     'EMAIL_WAS_CONFIRMED' => 'Адрес электронной почты подтверждён',
     'ENTER' => 'Войти',
     'ERROR_ADD' => 'При добавлении элемента с типом "{type}" произошла ошибка',

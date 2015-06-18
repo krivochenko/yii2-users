@@ -36,6 +36,7 @@ return [
 	'CREATED_AT' => 'Created at',
     'EMAIL' => 'E-mail',
     'EMAIL_CONFIRMATION' => 'E-mail confirmation',
+    'EMAIL_OR_USERNAME' => 'E-mail or username',
     'EMAIL_WAS_CONFIRMED' => 'E-mail was confirmed',
     'ENTER' => 'Enter',
     'ERROR_ADD' => 'An error occurred while adding an element of type "{type}"',

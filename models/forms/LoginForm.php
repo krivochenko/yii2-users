@@ -49,7 +49,7 @@ class LoginForm extends Model
     public function attributeLabels()
     {
         return [
-            'email' => Yii::t('users', 'EMAIL'),
+            'email' => Yii::t('users', 'EMAIL_OR_USERNAME'),
             'password' => Yii::t('users', 'PASSWORD'),
             'rememberMe' => Yii::t('users', 'REMEMBER_ME'),
         ];
@@ -76,7 +76,7 @@ class LoginForm extends Model
     public function getUser()
     {
         if ($this->_user === false) {
-            $this->_user = User::findByEmail($this->email);
+            $this->_user = User::findByEmailOrUserName($this->email);
         }
 
         return $this->_user;
