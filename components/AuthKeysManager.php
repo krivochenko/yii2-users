@@ -42,7 +42,7 @@ class AuthKeysManager extends AuthChoice
             $htmlOptions['class'] = 'btn btn-success btn-sm';
             $button = Html::a('<span class="glyphicon glyphicon-plus" aria-hidden="true"></span> <span class="hidden-md">' . Yii::t('users', 'ADD') . '</span>', $this->createClientUrl($client), $htmlOptions);
         }
-        echo Html::tag('span', $button, ['class' => 'auth-icon ' . $client->getName()]);
+        echo Html::tag('span', $button, ['class' => 'auth-icon ' . $client->getName(), 'style' => 'padding-left: 40px; margin-bottom: 10px;']);
         echo Html::endTag('div');
     }
 
