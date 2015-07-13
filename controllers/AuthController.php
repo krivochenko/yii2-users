@@ -50,7 +50,7 @@ class AuthController extends \yii\web\Controller
             if (Yii::$app->user->isGuest) {
                 $user = false;
                 if ($attributes['User']['email'] != null) {
-                    $user = User::findByEmail($attributes['User']['email']);
+                    $user = User::findByEmailOrUserName($attributes['User']['email']);
                 }
                 if (!$user) {
                     $user = new User;
