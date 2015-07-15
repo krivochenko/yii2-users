@@ -45,7 +45,7 @@ class VKontakte extends \yii\authclient\clients\VKontakte
 
         $return_attributes = [
             'User' => [
-                'email' => $this->accessToken->params['email'],
+                'email' => (isset($this->accessToken->params['email'])) ? $this->accessToken->params['email'] : null,
                 'username' => $attributes['first_name'] . ' ' . $attributes['last_name'],
                 'photo' => $attributes['photo_200'],
                 'sex' => $this->normalizeSex()[$attributes['sex']]
