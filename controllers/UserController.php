@@ -81,7 +81,7 @@ class UserController extends \yii\web\Controller
         $model = new RetryConfirmEmailForm;
         if ($model->load(Yii::$app->request->post()) && $model->validate()) {
             if ($model->user->sendEmailConfirmationMail(Yii::$app->module->getCustomMailView('confirmNewEmail'), 'new_email')) {
-                Yii::$app->getSession()->setFlash('success', Yii::t('users', 'CHECK_YOU_EMAIL_FOR_FURTHER_INSTRUCTION'));
+                Yii::$app->getSession()->setFlash('success', Yii::t('users', 'CHECK_YOUR_EMAIL_FOR_FURTHER_INSTRUCTION'));
                 return $this->redirect(Url::toRoute('/user/user/retry-confirm-email'));
             }
         }
@@ -96,7 +96,7 @@ class UserController extends \yii\web\Controller
         $model = new PasswordResetRequestForm;
         if ($model->load(Yii::$app->request->post()) && $model->validate()) {
             if ($model->sendEmail()) {
-                Yii::$app->getSession()->setFlash('success', Yii::t('users', 'CHECK_YOU_EMAIL_FOR_FURTHER_INSTRUCTION'));
+                Yii::$app->getSession()->setFlash('success', Yii::t('users', 'CHECK_YOUR_EMAIL_FOR_FURTHER_INSTRUCTION'));
 
                 return $this->goHome();
             } else {
