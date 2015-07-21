@@ -8,6 +8,10 @@ class Module extends \yii\base\Module
 {
     public $controllerNamespace = 'budyaga\users\controllers';
 
+    public $userPhotoUrl = '';
+
+    public $userPhotoPath = '';
+
     public $customViews = [];
 
     public $customMailViews = [];

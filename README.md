@@ -121,6 +121,8 @@ Config
 'modules' => [
     'user' => [
         'class' => 'budyaga\users\Module',
+        'userPhotoUrl' => 'http://example.com/uploads/user/photo',
+        'userPhotoPath' => '@frontend/web/uploads/user/photo'
     ],
 ],
 ```
