@@ -20,7 +20,7 @@ class AuthItemChild extends \yii\db\ActiveRecord
      */
     public static function tableName()
     {
-        return 'auth_item_child';
+        return '{{$auth_item_child}}';
     }
 
     /**
