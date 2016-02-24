@@ -20,7 +20,7 @@ class AuthRule extends ActiveRecord
      */
     public static function tableName()
     {
-        return 'auth_rule';
+        return '{{%auth_rule}}';
     }
 
     /**
