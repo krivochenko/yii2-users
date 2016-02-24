@@ -25,7 +25,7 @@ class UserEmailConfirmToken extends \yii\db\ActiveRecord
      */
     public static function tableName()
     {
-        return 'user_email_confirm_token';
+        return '{{%user_email_confirm_token}}';
     }
 
     /**

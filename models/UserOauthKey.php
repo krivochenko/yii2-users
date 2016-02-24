@@ -21,7 +21,7 @@ class UserOauthKey extends \yii\db\ActiveRecord
      */
     public static function tableName()
     {
-        return 'user_oauth_key';
+        return '{{%user_oauth_key}}';
     }
 
     /**
