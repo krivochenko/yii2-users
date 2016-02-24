@@ -20,7 +20,7 @@ class UserPasswordResetToken extends \yii\db\ActiveRecord
      */
     public static function tableName()
     {
-        return 'user_password_reset_token';
+        return '{{%user_password_reset_token}}';
     }
 
     /**
