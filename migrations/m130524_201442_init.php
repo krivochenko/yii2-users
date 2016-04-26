@@ -106,9 +106,25 @@ class m130524_201442_init extends Migration
         $this->addForeignKey('auth_assignment_user_id_fk', '{{%auth_assignment}}', 'user_id', '{{%user}}', 'id', 'CASCADE', 'CASCADE');
 
         //аккаунт для администратора и права
-        $this->batchInsert('user', ['id', 'username', 'password_hash', 'email', 'status', 'created_at', 'updated_at'], [
-            [1, Yii::t('users', 'MIGRATION_ADMINISTRATOR'), Yii::$app->security->generatePasswordHash('administrator@example.com'), 'administrator@example.com', User::STATUS_ACTIVE, time(), time()],
-            [2, Yii::t('users', 'MIGRATION_MODERATOR'), Yii::$app->security->generatePasswordHash('moderator@example.com'), 'moderator@example.com', User::STATUS_ACTIVE, time(), time()]
+        $this->batchInsert('user', ['username', 'auth_key', 'password_hash', 'email', 'status', 'created_at', 'updated_at'], [
+            [
+                Yii::t('users', 'MIGRATION_ADMINISTRATOR'),
+                Yii::$app->security->generateRandomString(),
+                Yii::$app->security->generatePasswordHash('administrator@example.com'),
+                'administrator@example.com',
+                User::STATUS_ACTIVE,
+                time(),
+                time()
+            ],
+            [
+                Yii::t('users', 'MIGRATION_MODERATOR'),
+                Yii::$app->security->generateRandomString(),
+                Yii::$app->security->generatePasswordHash('moderator@example.com'),
+                'moderator@example.com',
+                User::STATUS_ACTIVE,
+                time(),
+                time()
+            ]
         ]);
         $this->insert('auth_rule', [
             'name' => 'noElderRank',
