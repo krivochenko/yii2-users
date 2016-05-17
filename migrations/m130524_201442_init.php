@@ -106,7 +106,7 @@ class m130524_201442_init extends Migration
         $this->addForeignKey('auth_assignment_user_id_fk', '{{%auth_assignment}}', 'user_id', '{{%user}}', 'id', 'CASCADE', 'CASCADE');
 
         //аккаунт для администратора и права
-        $this->batchInsert('user', ['username', 'auth_key', 'password_hash', 'email', 'status', 'created_at', 'updated_at'], [
+        $this->batchInsert('{{%user}}', ['username', 'auth_key', 'password_hash', 'email', 'status', 'created_at', 'updated_at'], [
             [
                 Yii::t('users', 'MIGRATION_ADMINISTRATOR'),
                 Yii::$app->security->generateRandomString(),
@@ -126,13 +126,13 @@ class m130524_201442_init extends Migration
                 time()
             ]
         ]);
-        $this->insert('auth_rule', [
+        $this->insert('{{%auth_rule}}', [
             'name' => 'noElderRank',
             'data' => 'O:34:"budyaga\users\rbac\NoElderRankRule":3:{s:4:"name";s:11:"noElderRank";s:9:"createdAt";N;s:9:"updatedAt";i:1431880756;}',
             'created_at' => time(),
             'updated_at' => time(),
         ]);
-        $this->batchInsert('auth_item', ['name', 'type', 'description', 'rule_name', 'created_at', 'updated_at'], [
+        $this->batchInsert('{{%auth_item}}', ['name', 'type', 'description', 'rule_name', 'created_at', 'updated_at'], [
             ['administrator', Item::TYPE_ROLE, Yii::t('users', 'MIGRATION_ADMINISTRATOR'), NULL, time(), time()],
             ['moderator', Item::TYPE_ROLE, Yii::t('users', 'MIGRATION_MODERATOR'), NULL, time(), time()],
             ['rbacManage', Item::TYPE_PERMISSION, Yii::t('users', 'MIGRATION_RBAC_MANAGE'), NULL, time(), time()],
@@ -144,7 +144,7 @@ class m130524_201442_init extends Migration
             ['userUpdateNoElderRank', Item::TYPE_PERMISSION, Yii::t('users', 'MIGRATION_USER_UPDATE_NO_ELDER_RANK'), 'noElderRank', time(), time()],
             ['userView', Item::TYPE_PERMISSION, Yii::t('users', 'MIGRATION_USER_VIEW'), NULL, time(), time()],
         ]);
-        $this->batchInsert('auth_item_child', ['parent', 'child'], [
+        $this->batchInsert('{{%auth_item_child}}', ['parent', 'child'], [
             ['administrator', 'rbacManage'],
             ['administrator', 'userCreate'],
             ['administrator', 'userDelete'],
@@ -156,7 +156,7 @@ class m130524_201442_init extends Migration
             ['moderator', 'userUpdateNoElderRank'],
             ['userUpdateNoElderRank', 'userUpdate'],
         ]);
-        $this->batchInsert('auth_assignment', ['item_name', 'user_id', 'created_at', 'updated_at'], [
+        $this->batchInsert('{{%auth_assignment}}', ['item_name', 'user_id', 'created_at', 'updated_at'], [
             ['administrator', 1, time(), time()],
             ['moderator', 2, time(), time()],
         ]);
