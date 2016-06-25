@@ -27,7 +27,7 @@ class PasswordResetRequestForm extends Model
             ['email', 'exist',
                 'targetClass' => '\budyaga\users\models\User',
                 'filter' => ['status' => User::STATUS_ACTIVE],
-                'message' => Yii::t('users', 'USER_WITH_SUCH_EMAIL_NOT_EXISTS')
+                'message' => Yii::t('users', 'USER_WITH_SUCH_EMAIL_DO_NOT_EXISTS')
             ],
         ];
     }
