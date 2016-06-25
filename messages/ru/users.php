@@ -116,7 +116,7 @@ return [
     'UPDATE_USER' => 'Изменить пользователя "{username}"',
     'USERNAME' => 'Имя пользователя',
     'USERS' => 'Пользователи',
-    'USER_WITH_SUCH_EMAIL_NOT_EXISTS' => 'Пользователь с таким электронным адресом не существует',
+    'USER_WITH_SUCH_EMAIL_DO_NOT_EXISTS' => 'Пользователь с таким электронным адресом не существует',
     'USER_PERMISSIONS' => 'Права пользователя',
     'VIA_SOCIAL_NETWORKS' => 'Через социальные сети...',
     'YOU_CAN_ENTER_VIA_SOCIAL_NETWORKS' => 'Вы можете войти через социальные сети',
