@@ -25,7 +25,7 @@ class Module extends \yii\base\Module
 
     public static function registerTranslations()
     {
-        if (!isset(Yii::$app->i18n->translations['users']) && !isset(Yii::$app->i18n->translations['users/*'])) {
+        if (!isset(Yii::$app->i18n->translations['users']) && !isset(Yii::$app->i18n->translations['users/*']) && !isset(Yii::$app->i18n->translations['*'])) {
             Yii::$app->i18n->translations['users'] = [
                 'class' => 'yii\i18n\PhpMessageSource',
                 'basePath' => '@budyaga/users/messages',
