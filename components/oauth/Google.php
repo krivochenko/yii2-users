@@ -5,7 +5,7 @@ namespace budyaga\users\components\oauth;
 use budyaga\users\models\User;
 use budyaga\users\models\UserOauthKey;
 
-class Google extends \yii\authclient\clients\GoogleOAuth
+class Google extends \yii\authclient\clients\Google
 {
     /**
      * @inheritdoc
