@@ -5,7 +5,7 @@ namespace budyaga\users\components\oauth;
 use budyaga\users\models\User;
 use budyaga\users\models\UserOauthKey;
 
-class Yandex extends \yii\authclient\clients\YandexOAuth
+class Yandex extends \yii\authclient\clients\Yandex
 {
 
     public function getViewOptions()
