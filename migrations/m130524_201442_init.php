@@ -1,4 +1,6 @@
 <?php
+namespace budyaga\users\migrations;
+
 
 use yii\db\Schema;
 use yii\db\Migration;
@@ -108,18 +110,18 @@ class m130524_201442_init extends Migration
         //аккаунт для администратора и права
         $this->batchInsert('{{%user}}', ['username', 'auth_key', 'password_hash', 'email', 'status', 'created_at', 'updated_at'], [
             [
-                Yii::t('users', 'MIGRATION_ADMINISTRATOR'),
-                Yii::$app->security->generateRandomString(),
-                Yii::$app->security->generatePasswordHash('administrator@example.com'),
+                \Yii::t('users', 'MIGRATION_ADMINISTRATOR'),
+                \Yii::$app->security->generateRandomString(),
+                \Yii::$app->security->generatePasswordHash('administrator@example.com'),
                 'administrator@example.com',
                 User::STATUS_ACTIVE,
                 time(),
                 time()
             ],
             [
-                Yii::t('users', 'MIGRATION_MODERATOR'),
-                Yii::$app->security->generateRandomString(),
-                Yii::$app->security->generatePasswordHash('moderator@example.com'),
+                \Yii::t('users', 'MIGRATION_MODERATOR'),
+                \Yii::$app->security->generateRandomString(),
+                \Yii::$app->security->generatePasswordHash('moderator@example.com'),
                 'moderator@example.com',
                 User::STATUS_ACTIVE,
                 time(),
@@ -133,16 +135,16 @@ class m130524_201442_init extends Migration
             'updated_at' => time(),
         ]);
         $this->batchInsert('{{%auth_item}}', ['name', 'type', 'description', 'rule_name', 'created_at', 'updated_at'], [
-            ['administrator', Item::TYPE_ROLE, Yii::t('users', 'MIGRATION_ADMINISTRATOR'), NULL, time(), time()],
-            ['moderator', Item::TYPE_ROLE, Yii::t('users', 'MIGRATION_MODERATOR'), NULL, time(), time()],
-            ['rbacManage', Item::TYPE_PERMISSION, Yii::t('users', 'MIGRATION_RBAC_MANAGE'), NULL, time(), time()],
-            ['userCreate', Item::TYPE_PERMISSION, Yii::t('users', 'MIGRATION_USER_CREATE'), NULL, time(), time()],
-            ['userDelete', Item::TYPE_PERMISSION, Yii::t('users', 'MIGRATION_USER_DELETE'), NULL, time(), time()],
-            ['userManage', Item::TYPE_PERMISSION, Yii::t('users', 'MIGRATION_USER_MANAGE'), NULL, time(), time()],
-            ['userPermissions', Item::TYPE_PERMISSION, Yii::t('users', 'MIGRATION_USER_PERMISSIONS'), NULL, time(), time()],
-            ['userUpdate', Item::TYPE_PERMISSION, Yii::t('users', 'MIGRATION_USER_UPDATE'), NULL, time(), time()],
-            ['userUpdateNoElderRank', Item::TYPE_PERMISSION, Yii::t('users', 'MIGRATION_USER_UPDATE_NO_ELDER_RANK'), 'noElderRank', time(), time()],
-            ['userView', Item::TYPE_PERMISSION, Yii::t('users', 'MIGRATION_USER_VIEW'), NULL, time(), time()],
+            ['administrator', Item::TYPE_ROLE, \Yii::t('users', 'MIGRATION_ADMINISTRATOR'), NULL, time(), time()],
+            ['moderator', Item::TYPE_ROLE, \Yii::t('users', 'MIGRATION_MODERATOR'), NULL, time(), time()],
+            ['rbacManage', Item::TYPE_PERMISSION, \Yii::t('users', 'MIGRATION_RBAC_MANAGE'), NULL, time(), time()],
+            ['userCreate', Item::TYPE_PERMISSION, \Yii::t('users', 'MIGRATION_USER_CREATE'), NULL, time(), time()],
+            ['userDelete', Item::TYPE_PERMISSION, \Yii::t('users', 'MIGRATION_USER_DELETE'), NULL, time(), time()],
+            ['userManage', Item::TYPE_PERMISSION, \Yii::t('users', 'MIGRATION_USER_MANAGE'), NULL, time(), time()],
+            ['userPermissions', Item::TYPE_PERMISSION, \Yii::t('users', 'MIGRATION_USER_PERMISSIONS'), NULL, time(), time()],
+            ['userUpdate', Item::TYPE_PERMISSION, \Yii::t('users', 'MIGRATION_USER_UPDATE'), NULL, time(), time()],
+            ['userUpdateNoElderRank', Item::TYPE_PERMISSION, \Yii::t('users', 'MIGRATION_USER_UPDATE_NO_ELDER_RANK'), 'noElderRank', time(), time()],
+            ['userView', Item::TYPE_PERMISSION, \Yii::t('users', 'MIGRATION_USER_VIEW'), NULL, time(), time()],
         ]);
         $this->batchInsert('{{%auth_item_child}}', ['parent', 'child'], [
             ['administrator', 'rbacManage'],
