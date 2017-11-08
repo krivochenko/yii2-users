@@ -131,7 +131,7 @@ class UserController extends \yii\web\Controller
     public function actionProfile()
     {
         if (\Yii::$app->user->isGuest) {
-            return $this->goHome();
+            return $this->redirect(Url::toRoute('/login'));
         }
         $model = Yii::$app->user->identity;
         $changePasswordForm = new ChangePasswordForm;
