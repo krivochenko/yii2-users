@@ -1,6 +1,4 @@
 <?php
-namespace budyaga\users\migrations;
-
 
 use yii\db\Schema;
 use yii\db\Migration;
