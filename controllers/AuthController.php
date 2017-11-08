@@ -54,6 +54,8 @@ class AuthController extends \yii\web\Controller
                 }
                 if (!$user) {
                     $user = new User;
+                    $user->generateAuthKey();
+                    $user->password_hash = '';
                     $user->scenario = 'oauth';
                     $user->load($attributes);
                     $user->username = $this->findFreeUsername($user->username);
