@@ -24,7 +24,7 @@ return [
     'CHANGE_EMAIL' => 'Change e-mail',
     'CHANGE_PASSWORD' => 'Change password',
     'CHANGES_WERE_SAVED' => 'Changes were saved successfully',
-    'CHECK_YOU_EMAIL_FOR_FURTHER_INSTRUCTION' => 'Check your email for further instructions',
+    'CHECK_YOUR_EMAIL_FOR_FURTHER_INSTRUCTION' => 'Check your email for further instructions',
     'CHILDREN' => 'Children',
     'CHILDREN_FOR' => 'Children for "{name}"',
     'CHOOSE_ITEMS' => 'Choose items',
