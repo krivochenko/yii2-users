@@ -33,7 +33,7 @@ class VKontakte extends \yii\authclient\clients\VKontakte
     {
         $attributes = $this->api('users.get.json', 'GET', [
             'fields' => implode(',', [
-                'uid',
+                'id',
                 'first_name',
                 'last_name',
                 'photo_200',
@@ -50,7 +50,7 @@ class VKontakte extends \yii\authclient\clients\VKontakte
                 'photo' => $attributes['photo_200'],
                 'sex' => $this->normalizeSex()[$attributes['sex']]
             ],
-            'provider_user_id' => $attributes['uid'],
+            'provider_user_id' => $attributes['id'],
             'provider_id' => UserOauthKey::getAvailableClients()['vkontakte'],
         ];
 
